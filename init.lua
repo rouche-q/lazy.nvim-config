@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.cmd("set number")
+vim.cmd("set numberwidth=4")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -21,5 +22,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", {desc = "lazy"})
-vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", {desc = "Quit all"})
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "Quit all" })
+
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })

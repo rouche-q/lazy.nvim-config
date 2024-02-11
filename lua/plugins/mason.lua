@@ -1,5 +1,5 @@
 return {
-    "williamboman/mason.nvim",
+  "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig"
@@ -21,7 +21,6 @@ return {
       }
     })
 
-          
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     require("lspconfig").lua_ls.setup({
       capabilities = capabilities

@@ -11,6 +11,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     config = function()
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").lazy_load()
@@ -32,7 +33,7 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
+          { name = "luasnip" },
         }, {
           { name = "buffer" },
         }),
