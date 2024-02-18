@@ -15,13 +15,25 @@ return {
       }
     })
 
-    require("mason-lspconfig").setup({
+    local mason_lspconfig = require("mason-lspconfig")
+
+    mason_lspconfig.setup({
+      automatic_installation = true,
       ensure_installed = {
         "lua_ls"
       }
     })
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local lsp_installed = mason_lspconfig.get_installed_servers()
+    local lspconfig = require("lspconfig")
+
+    for _, server in pairs(lsp_installed) do
+      lspconfig[server].setup({
+        capabilities = capabilities
+      })
+    end
+
     require("lspconfig").lua_ls.setup({
       capabilities = capabilities
     })
