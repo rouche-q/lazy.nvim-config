@@ -33,9 +33,5 @@ return {
         capabilities = capabilities
       })
     end
-
-    require("lspconfig").lua_ls.setup({
-      capabilities = capabilities
-    })
   end
 }

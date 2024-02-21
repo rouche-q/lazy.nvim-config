@@ -7,7 +7,8 @@ return {
       mode = { "n", "v" },
       ["<leader>q"] = { name = "Quit/session" },
       ["<leader>f"] = { name = "Find" },
-      ["<leader>t"] = { name = "Trouble" }
+      ["<leader>s"] = { name = "Search" },
+      ["<leader>t"] = { name = "Trouble" },
     },
   },
   config = function(_, opts)
