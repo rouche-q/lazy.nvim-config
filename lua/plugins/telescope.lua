@@ -12,12 +12,15 @@ return {
           require("telescope.builtin")[builtin](opts)
         end
       end
+      local utils = require("telescope.utils")
       return {
         --- Search
-        { "<leader>sg", teledo("live_grep"),                  desc = "Grep (root dir)" },
-        { "<leader>sG", teledo("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+        { "<leader>sg", teledo("live_grep"),                               desc = "Grep (root dir)" },
+        { "<leader>sG", teledo("live_grep", { cwd = utils.buffer_dir() }), desc = "Grep (cwd)" },
         --- Find
-        { "<leader>ff", teledo("find_files"),                 desc = "Find a file" },
+        { "<leader>ff", teledo("find_files"),                              desc = "Find files" },
+        { "<leader>fr", teledo("lsp_references"),                          desc = "Find references" },
+        { "<leader>fi", teledo("lsp_implementations"),                     desc = "Find Implementations" },
       }
     end,
     config = function()

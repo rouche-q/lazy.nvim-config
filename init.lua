@@ -26,3 +26,5 @@ vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "Quit all" })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+vim.keymap.set("n", "rg", "<cmd> lua vim.lsp.buf.references()<cr>")
