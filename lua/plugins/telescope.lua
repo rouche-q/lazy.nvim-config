@@ -7,7 +7,7 @@ return {
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = function()
-      local teledo = function(builtin, opts)
+      local tlscp_do = function(builtin, opts)
         return function()
           require("telescope.builtin")[builtin](opts)
         end
@@ -15,12 +15,12 @@ return {
       local utils = require("telescope.utils")
       return {
         --- Search
-        { "<leader>sg", teledo("live_grep"),                               desc = "Grep (root dir)" },
-        { "<leader>sG", teledo("live_grep", { cwd = utils.buffer_dir() }), desc = "Grep (cwd)" },
+        { "<leader>sg", tlscp_do("live_grep"),                               desc = "Grep (root dir)" },
+        { "<leader>sG", tlscp_do("live_grep", { cwd = utils.buffer_dir() }), desc = "Grep (cwd)" },
         --- Find
-        { "<leader>ff", teledo("find_files"),                              desc = "Find files" },
-        { "<leader>fr", teledo("lsp_references"),                          desc = "Find references" },
-        { "<leader>fi", teledo("lsp_implementations"),                     desc = "Find Implementations" },
+        { "<leader>ff", tlscp_do("find_files"),                              desc = "Find Files" },
+        { "<leader>fr", tlscp_do("lsp_references"),                          desc = "Find References" },
+        { "<leader>fi", tlscp_do("lsp_implementations"),                     desc = "Find Implementations" },
       }
     end,
     config = function()
