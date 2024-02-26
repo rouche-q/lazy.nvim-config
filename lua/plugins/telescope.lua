@@ -6,6 +6,7 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim" },
+    ft = 'mason',
     keys = function()
       local tlscp_do = function(builtin, opts)
         return function()
