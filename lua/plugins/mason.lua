@@ -28,7 +28,7 @@ return {
     local lsp_installed = mason_lspconfig.get_installed_servers()
     local lspconfig = require("lspconfig")
 
-    for _, server in pairs(lsp_installed) do
+    for _, server in ipairs(lsp_installed) do
       lspconfig[server].setup({
         capabilities = capabilities
       })
