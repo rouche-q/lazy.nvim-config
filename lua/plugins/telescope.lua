@@ -31,6 +31,14 @@ return {
         { "<leader>ff", builtin.find_files,          desc = "Find Files" },
         { "<leader>fr", builtin.lsp_references,      desc = "Find References" },
         { "<leader>fi", builtin.lsp_implementations, desc = "Find Implementations" },
+        --- Other
+        {
+          "<leader>N",
+          function()
+            require('telescope').extensions.notify.notify()
+          end,
+          desc = "Last notifications"
+        }
       }
     end,
     config = function()
@@ -49,6 +57,7 @@ return {
       })
       require('telescope').load_extension('fzf')
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("notify")
     end,
   },
 }

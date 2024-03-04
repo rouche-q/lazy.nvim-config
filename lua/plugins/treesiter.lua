@@ -3,6 +3,8 @@ return {
   main = "nvim-treesitter.configs",
   opts = {
     ensure_installed = {
+      "vim",
+      "vimdoc",
       "lua",
       "go",
       "javascript",

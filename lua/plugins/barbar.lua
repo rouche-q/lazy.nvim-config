@@ -1,11 +1,12 @@
 return {
   'romgrk/barbar.nvim',
   dependencies = {
-    'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    'lewis6991/gitsigns.nvim',
+    'nvim-tree/nvim-web-devicons',
   },
   init = function() vim.g.barbar_auto_setup = true end,
   opts = {
+    auto_hide = 1,
     sidebar_filetypes = {
       ['neo-tree'] = { event = 'BufWipeout' },
     },
