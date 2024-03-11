@@ -6,8 +6,8 @@ return {
     defaults = {
       mode = { "n", "v" },
       ["<leader>q"] = { name = "Quit/session" },
-      ["<leader>f"] = { name = "Find" },
-      ["<leader>s"] = { name = "Search" },
+      ["<leader>f"] = { name = "Find with Telescope" },
+      ["<leader>s"] = { name = "Search with Telescope" },
       ["<leader>t"] = { name = "Trouble" },
     },
   },

@@ -28,9 +28,18 @@ return {
     local lsp_installed = mason_lspconfig.get_installed_servers()
     local lspconfig = require("lspconfig")
 
+    local function on_attach(_, buffer)
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = buffer })
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = buffer })
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover", buffer = buffer })
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = buffer })
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename", buffer = buffer })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Check references", buffer = buffer })
+    end
+
     for _, server in ipairs(lsp_installed) do
       lspconfig[server].setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
     end
   end

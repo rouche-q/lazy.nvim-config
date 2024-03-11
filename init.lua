@@ -22,5 +22,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
 local keymaps = require("keymaps")
 keymaps.init()
+
+local autocmds = require("autocmds")
+autocmds.init()
