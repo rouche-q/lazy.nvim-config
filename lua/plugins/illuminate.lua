@@ -1,6 +1,6 @@
 return {
   "RRethy/vim-illuminate",
-  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = "VeryLazy",
   opts = {
     delay = 100
   },
