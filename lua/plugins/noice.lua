@@ -42,5 +42,9 @@ return {
         },
       },
     })
+
+    require("notify").setup({
+      stages = "static"
+    })
   end,
 }

@@ -9,10 +9,13 @@ return {
     require("neo-tree").setup({
       enable_git_status = true,
       window = {
+        position = "float",
         mappings = {
           ["<space>"] = "none"
         }
       }
     })
+
+    vim.keymap.set('n', '<space><space>', '<Cmd>Neotree toggle<CR>')
   end,
 }

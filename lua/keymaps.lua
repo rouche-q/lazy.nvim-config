@@ -9,6 +9,9 @@ function keymaps.init()
   vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to up window" })
   vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to down window" })
 
+  vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>", { desc = "Go to previous tab" })
+  vim.keymap.set("n", "<S-l>", "<Cmd>BufferNext<CR>", { desc = "Go to next tab" })
+
   vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 end
 
