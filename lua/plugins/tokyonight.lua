@@ -3,7 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    style = "moon"
+    style = "storm"
   },
   config = function(_, opts)
     require("tokyonight").setup(opts)
