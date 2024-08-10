@@ -42,5 +42,27 @@ return {
         capabilities = capabilities,
       })
     end
+
+    lspconfig.dockerls.setup {
+      settings = {
+        docker = {
+          languageserver = {
+            formatter = {
+              ignoreMultilineInstructions = true,
+            },
+          },
+        }
+      }
+    }
+
+    lspconfig.helm_ls.setup {
+      settings = {
+        ["helm_ls"] = {
+          yamlls = {
+            path = "yaml-language-server"
+          }
+        }
+      }
+    }
   end
 }

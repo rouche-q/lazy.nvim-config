@@ -12,7 +12,7 @@ return {
       "go",
       "javascript",
       "typescript",
-      "bash"
+      "bash",
     },
     highlight = {
       enable = true,
