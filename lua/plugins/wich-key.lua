@@ -5,10 +5,10 @@ return {
     plugins = { spelling = true },
     defaults = {
       mode = { "n", "v" },
-      ["<leader>q"] = { name = "Quit/session" },
-      ["<leader>f"] = { name = "Find with Telescope" },
-      ["<leader>s"] = { name = "Search with Telescope" },
-      ["<leader>t"] = { name = "Trouble" },
+      { "<leader>f", group = "Find with Telescope" },
+      { "<leader>q", group = "Quit/session" },
+      { "<leader>s", group = "Search with Telescope" },
+      { "<leader>t", group = "Trouble" },
     },
   },
   config = function(_, opts)
@@ -17,6 +17,6 @@ return {
 
     local wk = require("which-key")
     wk.setup(opts)
-    wk.register(opts.defaults)
+    wk.add(opts.defaults)
   end,
 }
