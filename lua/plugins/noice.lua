@@ -3,7 +3,6 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
   },
   config = function()
     require("noice").setup({
@@ -43,8 +42,5 @@ return {
       },
     })
 
-    require("notify").setup({
-      stages = "static"
-    })
   end,
 }

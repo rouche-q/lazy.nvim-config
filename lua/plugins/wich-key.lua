@@ -5,10 +5,11 @@ return {
     plugins = { spelling = true },
     defaults = {
       mode = { "n", "v" },
-      { "<leader>f", group = "Find with Telescope" },
+      { "<leader>b", group = "Buffers" },
+      { "<leader>f", group = "Find" },
+      { "<leader>g", group = "Git" },
       { "<leader>q", group = "Quit/session" },
-      { "<leader>s", group = "Search with Telescope" },
-      { "<leader>t", group = "Trouble" },
+      { "<leader>s", group = "Search" },
     },
   },
   config = function(_, opts)

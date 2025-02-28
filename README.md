@@ -1,10 +1,9 @@
 # lazy.nvim-config
 Personal nvim configuration
 
---- In Progress ---
 
-## How to install
-
-```
+## Install
+```bash
 git clone git@github.com:rouche-q/lazy.nvim-config.git ~/.config/nvim
 ```
+
