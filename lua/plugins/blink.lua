@@ -19,6 +19,23 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
+    completion = {
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = false
+        }
+      },
+      menu = {
+        draw = {
+          columns = {{"label", "label_description"}, {"kind_icon", gap = 1, "kind"}}
+        }
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 0
+      }
+    },
     fuzzy = {
       implementation = "prefer_rust_with_warning",
       prebuilt_binaries = {

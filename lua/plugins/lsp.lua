@@ -18,10 +18,9 @@ return {
     })
 
     local mason_lspconfig = require("mason-lspconfig")
-    local lspconfig = require("lspconfig")
     local lsp_zero = require("lsp-zero")
+    local lspconfig = require("lspconfig")
     local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 
     lsp_zero.on_attach(
       function(client, bufnr)
