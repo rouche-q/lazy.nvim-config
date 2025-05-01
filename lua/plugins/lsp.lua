@@ -4,7 +4,8 @@ return {
     "saghen/blink.cmp",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    "VonHeikemen/lsp-zero.nvim"
+    "VonHeikemen/lsp-zero.nvim",
+    'stevearc/conform.nvim'
   },
   config = function()
     require("mason").setup({
@@ -38,6 +39,16 @@ return {
         function(server)
           lspconfig[server].setup({ capabilities = capabilities })
         end
+      }
+    })
+
+    require("conform").setup({
+      format_on_save = {
+        lsp_fallback = true,
+        timeout_ms = 500,
+      },
+      formater_by_ft = {
+        lua = { "stylua" }
       }
     })
   end

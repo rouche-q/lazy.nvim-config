@@ -5,13 +5,14 @@ local function augroup(name)
 end
 
 function autocmds.init()
+  --- Yank highlight
   vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup("highlight_yank"),
     callback = function()
       vim.highlight.on_yank()
     end,
   })
-
+  --- IDK but usefull
   vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*",
     callback = function()
@@ -20,10 +21,10 @@ function autocmds.init()
       end
     end,
   })
-
+  --- Same
   vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
-      local path = vim.fn.expand("%")      
+      local path = vim.fn.expand("%") 
       if vim.fn.isdirectory(path) == 1 then
         require("snacks").picker.explorer({layout = { preset = "default" }, auto_close = true, replace_netrw = true})  -- Open Snack.nvim picker
         vim.cmd("bwipeout")  -- Close the current directory buffer
